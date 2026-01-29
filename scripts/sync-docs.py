@@ -75,17 +75,25 @@ WEB_DOCS_ROOT = Path("web/docs")
 # Whitelist: files to sync from docs/ to web/docs/
 # Format: relative path from docs/ directory
 SYNC_WHITELIST = [
-    # English docs
+    # English docs - Design
     "en-US/design/architecture.md",
     # "en-US/design/document_upload_design.md",
     # "en-US/design/graph_index_creation.md",
     # "en-US/design/chat_history_design.md",
     
-    # Chinese docs
+    # English docs - Development
+    "en-US/development/dify.md",
+    "en-US/development/mcp-api.md",
+    
+    # Chinese docs - Design
     "zh-CN/design/architecture.md",
     # "zh-CN/design/document_upload_design.md",
     # "zh-CN/design/graph_index_creation.md",
     # "zh-CN/design/chat_history_design.md",
+    
+    # Chinese docs - Development
+    "zh-CN/development/dify.md",
+    "zh-CN/development/mcp-api.md",
 ]
 
 
@@ -138,8 +146,8 @@ def sync_images(doc_path: Path, image_refs: List[str]) -> None:
     doc_dir = doc_path.parent
     
     for img_ref in image_refs:
-        # Skip external URLs
-        if img_ref.startswith(('http://', 'https://', '//')):
+        # Skip external URLs and absolute paths
+        if img_ref.startswith(('http://', 'https://', '//', '/')):
             continue
         
         # Resolve image path relative to document
