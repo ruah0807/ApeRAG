@@ -11,6 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#  파일이 실제 LightRAG에서 사용하는 그래프 저장소 로직을 구현.
 
 """
 LightRAG Module for ApeRAG

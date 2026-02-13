@@ -177,37 +177,37 @@ Output:
 Entity_types: [organization, person, product, technology, location, event]
 Text:
 ```
-在杭州召开的2024年度人工智能发展论坛上,云智科技公司CEO李明发表了题为"智能计算新纪元"的主题演讲。他宣布云智科技将推出全新的星云X1 AI芯片,该芯片采用先进的5纳米工艺,算力相比上一代提升了60%。
+항저우에서 개최된 2024년도 인공지능 발전 포럼에서 윈즈테크 CEO 루아는 "지능형 컴퓨팅의 새로운 시대"라는 주제로 기조연설을 발표했다. 그는 윈즈테크가 첨단 5나노미터 공정을 채택하고 이전 세대 대비 연산 능력이 60% 향상된 새로운 성운X1 AI 칩을 출시할 것이라고 발표했다.
 
-李明在演讲中指出,边缘计算与大模型的结合将是未来技术发展的重要方向。云智科技研发团队已经在苏州研发中心完成了基于星云芯片的多模态模型训练测试,结果显示新芯片在图像识别和自然语言理解任务中表现出色。
+루아는 연설에서 엣지 컴퓨팅과 대규모 모델의 결합이 미래 기술 발전의 중요한 방향이 될 것이라고 지적했다. 윈즈테크 연구개발팀은 이미 쑤저우 연구개발센터에서 성운 칩 기반의 다중모달 모델 훈련 테스트를 완료했으며, 결과는 새로운 칩이 이미지 인식과 자연어 이해 작업에서 뛰어난 성능을 보인다는 것을 나타냈다.
 
-论坛期间,云智科技与江南理工大学签署了产学研合作协议,双方将在AI芯片架构设计和算法优化领域开展联合研究。江南理工大学计算机学院院长王芳教授表示,这次合作将为培养AI领域高端人才提供重要平台。
+포럼 기간 동안 윈즈테크는 장난이공대학과 산학연 협력 협정을 체결했으며, 양측은 AI 칩 아키텍처 설계 및 알고리즘 최적화 분야에서 공동 연구를 진행할 예정이다. 장난이공대학 컴퓨터학원 원장인 왕팡 교수는 이번 협력이 AI 분야의 고급 인재 양성을 위한 중요한 플랫폼을 제공할 것이라고 밝혔다.
 ```
 
 Output:
-("entity"{tuple_delimiter}"2024年度人工智能发展论坛"{tuple_delimiter}"event"{tuple_delimiter}"2024年度人工智能发展论坛是在杭州召开的AI行业重要会议,聚焦人工智能技术发展和应用。"){record_delimiter}
-("entity"{tuple_delimiter}"杭州"{tuple_delimiter}"location"{tuple_delimiter}"杭州是2024年度人工智能发展论坛的举办城市。"){record_delimiter}
-("entity"{tuple_delimiter}"云智科技"{tuple_delimiter}"organization"{tuple_delimiter}"云智科技是一家专注于AI芯片和智能计算技术研发的科技公司。"){record_delimiter}
-("entity"{tuple_delimiter}"李明"{tuple_delimiter}"person"{tuple_delimiter}"李明是云智科技公司的CEO,在人工智能发展论坛上发表了关于智能计算的主题演讲。"){record_delimiter}
-("entity"{tuple_delimiter}"星云X1"{tuple_delimiter}"product"{tuple_delimiter}"星云X1是云智科技推出的新一代AI芯片,采用5纳米工艺,算力提升60%。"){record_delimiter}
-("entity"{tuple_delimiter}"5纳米工艺"{tuple_delimiter}"technology"{tuple_delimiter}"5纳米工艺是星云X1芯片采用的先进半导体制造技术。"){record_delimiter}
-("entity"{tuple_delimiter}"边缘计算"{tuple_delimiter}"technology"{tuple_delimiter}"边缘计算是一种分布式计算架构,与大模型结合被认为是未来技术发展方向。"){record_delimiter}
-("entity"{tuple_delimiter}"苏州研发中心"{tuple_delimiter}"location"{tuple_delimiter}"苏州研发中心是云智科技的研发基地,多模态模型训练测试在此完成。"){record_delimiter}
-("entity"{tuple_delimiter}"多模态模型"{tuple_delimiter}"technology"{tuple_delimiter}"多模态模型是基于星云芯片训练的AI技术,用于图像识别和自然语言理解。"){record_delimiter}
-("entity"{tuple_delimiter}"江南理工大学"{tuple_delimiter}"organization"{tuple_delimiter}"江南理工大学是与云智科技签署产学研合作协议的高校,在AI领域开展联合研究。"){record_delimiter}
-("entity"{tuple_delimiter}"江南理工大学计算机学院"{tuple_delimiter}"organization"{tuple_delimiter}"江南理工大学计算机学院是江南理工大学的二级学院,参与AI芯片研究合作。"){record_delimiter}
-("entity"{tuple_delimiter}"王芳"{tuple_delimiter}"person"{tuple_delimiter}"王芳是江南理工大学计算机学院院长,负责与云智科技的产学研合作项目。"){record_delimiter}
-("relationship"{tuple_delimiter}"李明"{tuple_delimiter}"云智科技"{tuple_delimiter}"李明是云智科技的CEO,负责公司战略决策和对外发言。"{tuple_delimiter}"企业领导, 战略管理"{tuple_delimiter}10){record_delimiter}
-("relationship"{tuple_delimiter}"云智科技"{tuple_delimiter}"星云X1"{tuple_delimiter}"云智科技研发并推出了星云X1 AI芯片产品。"{tuple_delimiter}"产品研发, 技术创新"{tuple_delimiter}10){record_delimiter}
-("relationship"{tuple_delimiter}"星云X1"{tuple_delimiter}"5纳米工艺"{tuple_delimiter}"星云X1芯片采用5纳米工艺制造技术。"{tuple_delimiter}"技术应用, 制造工艺"{tuple_delimiter}9){record_delimiter}
-("relationship"{tuple_delimiter}"李明"{tuple_delimiter}"2024年度人工智能发展论坛"{tuple_delimiter}"李明在2024年度人工智能发展论坛上发表主题演讲。"{tuple_delimiter}"会议演讲, 行业交流"{tuple_delimiter}8){record_delimiter}
-("relationship"{tuple_delimiter}"2024年度人工智能发展论坛"{tuple_delimiter}"杭州"{tuple_delimiter}"2024年度人工智能发展论坛在杭州举办。"{tuple_delimiter}"会议地点, 地理位置"{tuple_delimiter}8){record_delimiter}
-("relationship"{tuple_delimiter}"云智科技"{tuple_delimiter}"苏州研发中心"{tuple_delimiter}"云智科技在苏州研发中心进行AI芯片研发和模型训练测试。"{tuple_delimiter}"研发基地, 技术测试"{tuple_delimiter}9){record_delimiter}
-("relationship"{tuple_delimiter}"星云X1"{tuple_delimiter}"多模态模型"{tuple_delimiter}"星云X1芯片被用于多模态模型的训练,在图像和语言任务中表现出色。"{tuple_delimiter}"技术应用, 性能验证"{tuple_delimiter}9){record_delimiter}
-("relationship"{tuple_delimiter}"云智科技"{tuple_delimiter}"江南理工大学"{tuple_delimiter}"云智科技与江南理工大学签署产学研合作协议,在AI领域开展联合研究。"{tuple_delimiter}"产学研合作, 战略协议"{tuple_delimiter}10){record_delimiter}
-("relationship"{tuple_delimiter}"王芳"{tuple_delimiter}"江南理工大学计算机学院"{tuple_delimiter}"王芳担任江南理工大学计算机学院院长。"{tuple_delimiter}"学术领导, 学院管理"{tuple_delimiter}10){record_delimiter}
-("relationship"{tuple_delimiter}"江南理工大学计算机学院"{tuple_delimiter}"江南理工大学"{tuple_delimiter}"江南理工大学计算机学院是江南理工大学的下属学院。"{tuple_delimiter}"组织从属, 学术机构"{tuple_delimiter}10){record_delimiter}
-("content_keywords"{tuple_delimiter}"人工智能, 芯片研发, 产学研合作, 边缘计算, 多模态技术"){completion_delimiter}
+("entity"{tuple_delimiter}"2024년도 인공지능 발전 포럼"{tuple_delimiter}"event"{tuple_delimiter}"2024년도 인공지능 발전 포럼은 항저우에서 개최된 AI 산업의 중요한 회의로, 인공지능 기술 발전과 응용에 초점을 맞추고 있다."){record_delimiter}
+("entity"{tuple_delimiter}"항저우"{tuple_delimiter}"location"{tuple_delimiter}"항저우는 2024년도 인공지능 발전 포럼이 개최된 도시이다."){record_delimiter}
+("entity"{tuple_delimiter}"윈즈테크"{tuple_delimiter}"organization"{tuple_delimiter}"윈즈테크는 AI 칩과 지능형 컴퓨팅 기술 연구개발에 전념하는 과학기술 회사이다."){record_delimiter}
+("entity"{tuple_delimiter}"루아"{tuple_delimiter}"person"{tuple_delimiter}"루아는 윈즈테크의 CEO로, 인공지능 발전 포럼에서 지능형 컴퓨팅에 관한 기조연설을 발표했다."){record_delimiter}
+("entity"{tuple_delimiter}"성운X1"{tuple_delimiter}"product"{tuple_delimiter}"성운X1은 윈즈테크가 출시한 차세대 AI 칩으로, 5나노미터 공정을 채택하여 연산 능력이 60% 향상되었다."){record_delimiter}
+("entity"{tuple_delimiter}"5나노미터 공정"{tuple_delimiter}"technology"{tuple_delimiter}"5나노미터 공정은 성운X1 칩이 채택한 첨단 반도체 제조 기술이다."){record_delimiter}
+("entity"{tuple_delimiter}"엣지 컴퓨팅"{tuple_delimiter}"technology"{tuple_delimiter}"엣지 컴퓨팅은 분산 컴퓨팅 아키텍처로, 대규모 모델과의 결합이 미래 기술 발전 방향으로 여겨진다."){record_delimiter}
+("entity"{tuple_delimiter}"쑤저우 연구개발센터"{tuple_delimiter}"location"{tuple_delimiter}"쑤저우 연구개발센터는 윈즈테크의 연구개발 기지로, 다중모달 모델 훈련 테스트가 이곳에서 완료되었다."){record_delimiter}
+("entity"{tuple_delimiter}"다중모달 모델"{tuple_delimiter}"technology"{tuple_delimiter}"다중모달 모델은 성운 칩을 기반으로 훈련된 AI 기술로, 이미지 인식과 자연어 이해에 사용된다."){record_delimiter}
+("entity"{tuple_delimiter}"장난이공대학"{tuple_delimiter}"organization"{tuple_delimiter}"장난이공대학은 윈즈테크와 산학연 협력 협정을 체결한 대학으로, AI 분야에서 공동 연구를 진행한다."){record_delimiter}
+("entity"{tuple_delimiter}"장난이공대학 컴퓨터학원"{tuple_delimiter}"organization"{tuple_delimiter}"장난이공대학 컴퓨터학원은 장난이공대학의 단과대학으로, AI 칩 연구 협력에 참여한다."){record_delimiter}
+("entity"{tuple_delimiter}"왕팡"{tuple_delimiter}"person"{tuple_delimiter}"왕팡은 장난이공대학 컴퓨터학원 원장으로, 윈즈테크와의 산학연 협력 프로젝트를 담당한다."){record_delimiter}
+("relationship"{tuple_delimiter}"루아"{tuple_delimiter}"윈즈테크"{tuple_delimiter}"루아는 윈즈테크의 CEO로서 회사의 전략적 의사결정과 대외 발언을 담당한다."{tuple_delimiter}"기업 리더십, 전략 경영"{tuple_delimiter}10){record_delimiter}
+("relationship"{tuple_delimiter}"윈즈테크"{tuple_delimiter}"성운X1"{tuple_delimiter}"윈즈테크는 성운X1 AI 칩 제품을 연구개발하고 출시했다."{tuple_delimiter}"제품 개발, 기술 혁신"{tuple_delimiter}10){record_delimiter}
+("relationship"{tuple_delimiter}"성운X1"{tuple_delimiter}"5나노미터 공정"{tuple_delimiter}"성운X1 칩은 5나노미터 공정 제조 기술을 채택했다."{tuple_delimiter}"기술 적용, 제조 공정"{tuple_delimiter}9){record_delimiter}
+("relationship"{tuple_delimiter}"루아"{tuple_delimiter}"2024년도 인공지능 발전 포럼"{tuple_delimiter}"루아는 2024년도 인공지능 발전 포럼에서 기조연설을 발표했다."{tuple_delimiter}"회의 연설, 업계 교류"{tuple_delimiter}8){record_delimiter}
+("relationship"{tuple_delimiter}"2024년도 인공지능 발전 포럼"{tuple_delimiter}"항저우"{tuple_delimiter}"2024년도 인공지능 발전 포럼은 항저우에서 개최되었다."{tuple_delimiter}"회의 장소, 지리적 위치"{tuple_delimiter}8){record_delimiter}
+("relationship"{tuple_delimiter}"윈즈테크"{tuple_delimiter}"쑤저우 연구개발센터"{tuple_delimiter}"윈즈테크는 쑤저우 연구개발센터에서 AI 칩 연구개발과 모델 훈련 테스트를 진행한다."{tuple_delimiter}"연구개발 기지, 기술 테스트"{tuple_delimiter}9){record_delimiter}
+("relationship"{tuple_delimiter}"성운X1"{tuple_delimiter}"다중모달 모델"{tuple_delimiter}"성운X1 칩은 다중모달 모델 훈련에 사용되며, 이미지 및 언어 작업에서 우수한 성능을 보인다."{tuple_delimiter}"기술 적용, 성능 검증"{tuple_delimiter}9){record_delimiter}
+("relationship"{tuple_delimiter}"윈즈테크"{tuple_delimiter}"장난이공대학"{tuple_delimiter}"윈즈테크는 장난이공대학과 산학연 협력 협정을 체결하여 AI 분야에서 공동 연구를 진행한다."{tuple_delimiter}"산학연 협력, 전략적 협정"{tuple_delimiter}10){record_delimiter}
+("relationship"{tuple_delimiter}"왕팡"{tuple_delimiter}"장난이공대학 컴퓨터학원"{tuple_delimiter}"왕팡은 장난이공대학 컴퓨터학원 원장을 맡고 있다."{tuple_delimiter}"학술 리더십, 학원 관리"{tuple_delimiter}10){record_delimiter}
+("relationship"{tuple_delimiter}"장난이공대학 컴퓨터학원"{tuple_delimiter}"장난이공대학"{tuple_delimiter}"장난이공대학 컴퓨터학원은 장난이공대학의 산하 학원이다."{tuple_delimiter}"조직 소속, 학술 기관"{tuple_delimiter}10){record_delimiter}
+("content_keywords"{tuple_delimiter}"인공지능, 칩 연구개발, 산학연 협력, 엣지 컴퓨팅, 다중모달 기술"){completion_delimiter}
 #############################""",
 ]
 
@@ -425,7 +425,7 @@ Given a list of entities from a knowledge graph, identify groups of entities tha
 ---What TO Merge (Acceptable Cases)---
 - Different names for the same company: "Apple Inc" ↔ "Apple"
 - Full name vs abbreviation of same person: "John Smith" ↔ "J. Smith" 
-- Different language names for same entity: "中国生态农业学报" ↔ "Chinese Journal of Eco-Agriculture"
+- Different language names for same entity: "대한민국" ↔ "Republic of Korea"
 - Former vs current name of same entity: "Tesla Motors" ↔ "Tesla Inc"
 - Full name vs nickname/abbreviation: "New York City" ↔ "NYC"
 
@@ -436,13 +436,13 @@ Use these guidelines for confidence scoring:
 - Identical entities with only capitalization/formatting differences: "OpenAI" ↔ "openai", "iPhone" ↔ "iphone"
 - Same entity with punctuation variations: "McDonald's" ↔ "McDonalds"
 
-**0.9-0.94: Very High Confidence**
-- Official name vs widely recognized abbreviation: "New York City" ↔ "NYC", "United States" ↔ "USA"
-- Different language names for same entity: "Microsoft" ↔ "微软", "Apple" ↔ "苹果公司"
+**0.9-0.94: 매우 높은 신뢰도**
+- 공식 명칭 대 널리 알려진 약어: "New York City" ↔ "NYC", "United States" ↔ "USA"
+- 동일한 개체의 다른 언어 이름: "Microsoft" ↔ "微软", "Apple" ↔ "苹果公司"
 
-**0.8-0.89: High Confidence**
-- Full name vs abbreviated form: "John Smith" ↔ "J. Smith", "Robert Johnson" ↔ "Bob Johnson"
-- Formal vs informal name variations: "Apple Inc" ↔ "Apple", "Microsoft Corporation" ↔ "Microsoft"
+**0.8-0.89: 높은 신뢰도**
+- 전체 이름 대 약식 형태: "John Smith" ↔ "J. Smith", "Robert Johnson" ↔ "Bob Johnson"
+- 공식 명칭 대 비공식 명칭 변형: "Apple Inc" ↔ "Apple", "Microsoft Corporation" ↔ "Microsoft"
 
 **0.7-0.79: Moderate Confidence**
 - Likely same entity but requires careful consideration
@@ -515,13 +515,13 @@ Entity 4:
 - Degree: 3
 
 Entity 5:
-- Name: 中国生态农业学报
+- Name: 한국생태농업학보
 - Type: ORGANIZATION
-- Description: 中国生态农业学报是一份学术期刊，发表关于生态农业的研究文章
+- Description: 한국생태농업학보는 생태농업에 관한 연구 논문을 발표하는 학술지입니다
 - Degree: 8
 
 Entity 6:
-- Name: Chinese Journal of Eco-Agriculture
+- Name: Korean Journal of Eco-Agriculture
 - Type: ORGANIZATION
 - Description: An academic journal publishing research articles on ecological agriculture
 - Degree: 6
@@ -541,7 +541,7 @@ Entity 8:
 Output:
 ("merge_group"{tuple_delimiter}Apple Inc{graph_field_sep}Apple{tuple_delimiter}0.88{tuple_delimiter}Both entities refer to the exact same technology company - Apple Inc is the official name while Apple is the commonly used short form{tuple_delimiter}Apple Inc{tuple_delimiter}ORGANIZATION){record_delimiter}
 ("merge_group"{tuple_delimiter}John Smith{graph_field_sep}J. Smith{tuple_delimiter}0.85{tuple_delimiter}Both entities refer to the exact same person - John Smith working as a software engineer at Apple, with J. Smith being the abbreviated name form{tuple_delimiter}John Smith{tuple_delimiter}PERSON){record_delimiter}
-("merge_group"{tuple_delimiter}中国生态农业学报{graph_field_sep}Chinese Journal of Eco-Agriculture{tuple_delimiter}0.92{tuple_delimiter}These entities are the Chinese and English names for the exact same academic journal. The descriptions confirm they refer to the same publication{tuple_delimiter}中国生态农业学报{tuple_delimiter}ORGANIZATION){record_delimiter}
+("merge_group"{tuple_delimiter}한국생태농업학보{graph_field_sep}Korean Journal of Eco-Agriculture{tuple_delimiter}0.92{tuple_delimiter}These entities are the Korean and English names for the exact same academic journal. The descriptions confirm they refer to the same publication{tuple_delimiter}한국생태농업학보{tuple_delimiter}ORGANIZATION){record_delimiter}
 ("merge_group"{tuple_delimiter}New York City{graph_field_sep}NYC{tuple_delimiter}0.93{tuple_delimiter}Both entities refer to the exact same city - New York City is the full official name while NYC is the widely used abbreviation{tuple_delimiter}New York City{tuple_delimiter}GEO){completion_delimiter}
 
 #############################

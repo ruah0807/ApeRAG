@@ -105,6 +105,7 @@ ON CONFLICT (name) DO UPDATE SET
     rerank_dialect = EXCLUDED.rerank_dialect,
     allow_custom_base_url = EXCLUDED.allow_custom_base_url,
     base_url = EXCLUDED.base_url,
+    gmt_deleted = NULL,
     gmt_updated = NOW();"""
 
 
@@ -146,6 +147,7 @@ ON CONFLICT (provider_name, api, model) DO UPDATE SET
     max_input_tokens = EXCLUDED.max_input_tokens,
     max_output_tokens = EXCLUDED.max_output_tokens,
     tags = EXCLUDED.tags,
+    gmt_deleted = NULL,
     gmt_updated = NOW();"""
 
         upserts.append(upsert)
@@ -982,6 +984,108 @@ def create_openrouter_config():
         print(f"❌ Error processing OpenRouter data: {str(e)}")
         return None
 
+def create_local_llm_config():
+    """로컬 LLM (Gemma3-27B) 설정"""
+    config = {
+        "name": "local_llm",
+        "label": "Local LLM (Gemma3)",
+        "completion_dialect": "openai",   # vLLM은 OpenAI API 호환
+        "embedding_dialect": "openai",
+        "rerank_dialect": "jina_ai",
+        "allow_custom_base_url": True,
+        "base_url": "http://aperag-llm-service:7100/v1", # 도커 내부 주소
+        "completion": [
+            {
+                "model": "gemma3-27b",  # docker-compose의 --served-model-name과 일치해야 함
+                "custom_llm_provider": "openai",
+                "context_window": 8192,
+                "max_input_tokens": 8192,
+                "max_output_tokens": 4096,
+                "tags": ["local"]
+            }
+        ],
+        "embedding": [],
+        "rerank": []
+    }
+    return config
+
+def create_local_embedding_config():
+    """로컬 임베딩 (Qwen3) 설정"""
+    config = {
+        "name": "local_embedding",
+        "label": "Local Embedding (Qwen3)",
+        "completion_dialect": "openai",
+        "embedding_dialect": "openai",   # vLLM은 OpenAI API 호환
+        "rerank_dialect": "jina_ai",
+        "allow_custom_base_url": True,
+        "base_url": "http://aperag-embedding-service:8000/v1", # 도커 내부 주소
+        "completion": [],
+        "embedding": [
+            {
+                "model": "qwen3-embedding", # docker-compose의 --served-model-name과 일치해야 함
+                "custom_llm_provider": "openai",
+                "max_input_tokens": 8192,
+                "max_output_tokens": 0,
+                "tags": ["local", "enable_for_collection"] # enable_for_collection 태그 필수
+            }
+        ],
+        "rerank": []
+    }
+    return config
+
+
+
+def create_local_llm_config():
+    """Create configuration for local LLM service running in Docker"""
+    config = {
+        "name": "local-llm",
+        "label": "Local LLM (Gemma3-27B)",
+        "completion_dialect": "openai",
+        "embedding_dialect": "openai",
+        "rerank_dialect": "jina_ai",
+        "allow_custom_base_url": True,
+        "base_url": "http://aperag-llm-service:7100/v1",
+        "completion": [
+            {
+                "model": "gemma3-27b",
+                "custom_llm_provider": "openai",
+                "context_window": 8192,
+                "max_input_tokens": 8192,
+                "max_output_tokens": 8192,
+                "tags": []
+            }
+        ],
+        "embedding": [],
+        "rerank": []
+    }
+    return config
+
+
+def create_local_embedding_config():
+    """Create configuration for local Embedding service running in Docker"""
+    config = {
+        "name": "local-embedding",
+        "label": "Local Embedding (Qwen3)",
+        "completion_dialect": "openai",
+        "embedding_dialect": "openai",
+        "rerank_dialect": "jina_ai",
+        "allow_custom_base_url": True,
+        "base_url": "http://aperag-embedding-service:8000/v1",
+        "completion": [],
+        "embedding": [
+            {
+                "model": "qwen3-embedding",
+                "custom_llm_provider": "openai",
+                "context_window": 8192,
+                "max_input_tokens": 8192,
+                "max_output_tokens": 0,
+                "tags": []
+            }
+        ],
+        "rerank": []
+    }
+    return config
+
 
 def create_provider_config():
     """
@@ -1007,7 +1111,9 @@ def create_provider_config():
         create_deepseek_config(),
         create_alibabacloud_config(),
         create_siliconflow_config(),
-        create_jina_config()
+        create_jina_config(),
+        create_local_llm_config(),
+        create_local_embedding_config()
     ]
 
     # Add OpenRouter configuration
@@ -1158,6 +1264,8 @@ def save_sql_to_file(sql_content: str):
         f.write(sql_content)
 
     print(f"\nSQL script saved to: {output_file}")
+
+
 
 
 def main():
